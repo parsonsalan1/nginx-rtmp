@@ -18,7 +18,10 @@ do
 			;;
 			--password=*)
 			PASSWORD="${i#*=}"
-			;;			
+			;;
+			--rtmpport=*)
+			RTMPPORT="${i#*=}"
+			;;
 			*)
 			;;
 	esac
