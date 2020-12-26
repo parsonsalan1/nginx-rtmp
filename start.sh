@@ -3,6 +3,7 @@
 # defaults
 RTMPSECRET="stream"
 ADMINPASSWORD="password1"
+RTMPPORT="1934"
 
 for i in "$@"
 do
@@ -22,7 +23,7 @@ STREAMS="push ${STREAMS//;/;\npush }"
 
 echo "rtmp {
     server {
-        listen 1935;
+        listen $RTMPPORT;
         chunk_size 4000;
         application $RTMPSECRET {
             live on;
