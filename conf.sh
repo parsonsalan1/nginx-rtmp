@@ -9,6 +9,9 @@ do
                 --streams=*)
                 STREAMS="${i#*=}"
                 ;;
+		--rtmpport=*)
+		RTMPPORT="${i#*=}"
+		;;
                 *)
                 ;;
         esac
