@@ -1,4 +1,4 @@
-## NGINX Based Restream Server for RTMP
+## NGINX Based Restream Server for RTMP with option to configure rtmp port
 
 Live streaming is nothing new and the ecosystem has matured. Nowadays, most social media platforms (including YouTube and Facebook) and a few point solutions for live streaming have emerged to provide live streaming services to whoever wants to use them. Many people though want to be able to stream to multiple platforms simultaneously. The problem though is that many software packages, such as OBS, do not support this as a feature, so it creates the need to create a proxy that will receive a live stream and essentially fork it so that it can be sent to multiple services, a concept known as restreaming.
 
@@ -13,7 +13,7 @@ This project grew out of a twofold need. One was to automate the build and condq
 To run this as a Docker container, simply use a Docker run command.
 
 ```
-docker run -it -p 1935:1935 -p 443:443 -e STREAMS=rtmp://stream1/key;rtmp://stream2/key  -e RTMPSECRET=yoursecretkey -e PASSWORD=password123 blaize/nginx-rtmp
+docker run -it -p 1935:1935 -p 443:443 -e STREAMS=rtmp://stream1/key;rtmp://stream2/key  -e rtmpport=yourcustomport RTMPSECRET=yoursecretkey -e PASSWORD=password123 blaize/nginx-rtmp
 ```
 
 The -e parameters define the deployment. If you have Docker for Desktop installed, you can run this locally.
